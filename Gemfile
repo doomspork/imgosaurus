@@ -23,6 +23,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Use unicorn as the app server
 gem 'unicorn'
 
+gem 'devise', '~> 3.4.1'
+
 group :development, :test do
   gem 'spring'
 end

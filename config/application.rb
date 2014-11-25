@@ -11,6 +11,7 @@ Bundler.require(*Rails.groups)
 
 module Imgosaurus
   class Application < Rails::Application
-
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.encoding        = 'utf-8'
   end
 end

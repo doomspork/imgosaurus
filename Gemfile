@@ -14,6 +14,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 
 group :development, :test do
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-migrate'
+  gem 'guard-rails'
+  gem 'guard-rspec'
+  gem 'guard-rubocop'
   gem 'rubocop'
   gem 'spring'
 end

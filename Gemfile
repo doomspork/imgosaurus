@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 source 'https://rubygems.org'
 
 gem 'bcrypt', '~> 3.1.7'
@@ -13,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 
 group :development, :test do
+  gem 'rubocop'
   gem 'spring'
 end
 

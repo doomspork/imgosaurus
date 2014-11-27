@@ -14,3 +14,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ingore code coverage report
+/docs/coverage
+
+# Ignore cloud9 ide files
+.c9
+
+# Ignore spring - Rails application preloader
+/spring

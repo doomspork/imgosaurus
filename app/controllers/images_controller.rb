@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   before_action :validate_params
 
   def create
-    final_image = ImageProcessor.process(image, transforms)
+    final_image = Pipeline.process(image, transforms)
     render_response(final_image)
   end
 

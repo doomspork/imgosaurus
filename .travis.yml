@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - 2.1.1
+  - 2.0.0
+  - ruby-head
+bundler_args: --without development
+before_script:
+  - bundle exec rake db:create db:migrate
+script: bundle exec rspec
+matrix:
+  fast_finish: true
+  allow_failures:
+    - rvm: ruby-head

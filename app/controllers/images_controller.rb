@@ -1,5 +1,6 @@
+# -*- encoding : utf-8 -*-
 class ImagesController < ApplicationController
-  before_filter :validate_params
+  before_action :validate_params
 
   def create
     final_image = ImageProcessor.process(image, transforms)

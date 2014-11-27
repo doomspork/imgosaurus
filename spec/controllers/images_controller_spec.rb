@@ -6,7 +6,7 @@ RSpec.describe ImagesController, type: :controller do
     let(:final_image) { 'https://cdn.imgosaurus.com/image.png' }
 
     it 'returns http success' do
-      mock(ImageProcessor).process(anything, anything) { final_image }
+      mock(Pipeline).process(anything, anything) { final_image }
       post :create, image: 'a remote path', transformations: { 'crop' => '15%' }
       expect(response).to have_http_status(:success)
       expect(JSON.parse(response.body)).to include 'image' => final_image

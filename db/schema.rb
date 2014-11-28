@@ -11,12 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128201649) do
+ActiveRecord::Schema.define(version: 20141128203521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
   enable_extension "uuid-ossp"
+
+  create_table "images", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+    t.string   "original_filepath",  null: false
+    t.string   "cached_filepath"
+    t.string   "processed_filepath"
+    t.integer  "size"
+    t.string   "format"
+    t.integer  "dimensions",                      array: true
+    t.integer  "resolution",                      array: true
+    t.string   "signature"
+    t.hstore   "transformations"
+    t.integer  "user_id",            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.uuid     "token",                  default: "uuid_generate_v4()"
@@ -39,6 +54,7 @@ ActiveRecord::Schema.define(version: 20141128201649) do
     t.datetime "locked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

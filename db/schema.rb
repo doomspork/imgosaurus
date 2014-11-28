@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20141128201649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "uuid-ossp"
   enable_extension "hstore"
+  enable_extension "uuid-ossp"
 
   create_table "users", force: true do |t|
     t.uuid     "token",                  default: "uuid_generate_v4()"

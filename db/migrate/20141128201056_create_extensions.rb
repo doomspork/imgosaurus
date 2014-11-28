@@ -1,11 +1,11 @@
 class CreateExtensions < ActiveRecord::Migration
   def up
-    execute 'CREATE EXTENSION "uuid-ossp"'
-    execute 'CREATE EXTENSION "hstore"'
+    enable_extension :hstore
+    enable_extension :'uuid-ossp'
   end
 
   def down
-    execute 'DROP EXTENSION "hstore"'
-    execute 'DROP EXTENSION "uuid-ossp"'
+    disable_extension :hstore
+    disable_extension :'uuid-ossp'
   end
 end

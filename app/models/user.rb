@@ -10,4 +10,13 @@ class User < ActiveRecord::Base
          :validatable
 
   has_many :images
+
+  def to_h
+    {
+      id:      id,
+      email:   email,
+      token:   token,
+      created: created_at
+    }
+  end
 end

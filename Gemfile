@@ -30,7 +30,7 @@ end
 group :test do
   gem 'coveralls', require: false
   gem 'database_cleaner'
-  gem 'factory_girl_rails', require: false
+  gem 'factory_girl_rails'
   gem 'rr'
   gem 'rspec-its'
   gem 'rspec-rails'

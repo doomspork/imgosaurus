@@ -4,6 +4,7 @@ AllCops:
   RunRailsCops: true
   Exclude:
     - 'bin/*'
+    - 'db/**/*'
     - 'vendor/**/*'
     - 'spec/fixtures/**/*'
 
@@ -11,5 +12,8 @@ Style/Encoding:
   Enabled: true
 
 Style/AlignHash:
-  EnforcedHashRocketStyle: separator
+  EnforcedHashRocketStyle: table
   EnforcedColonStyle: table
+
+Metrics/LineLength:
+  Max: 120

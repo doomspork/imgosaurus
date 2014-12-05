@@ -1,8 +1,10 @@
 # -*- encoding : utf-8 -*-
-class Proccessor
-  include Sidekiq::Worker
+module Pipeline
+  class Processor
+    include Sidekiq::Worker
 
-  def perform
-    # TODO
+    def perform
+      # TODO
+    end
   end
 end

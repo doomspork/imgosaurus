@@ -21,8 +21,7 @@ group :development, :test do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-rubocop'
-  gem 'rubocop'
-  gem 'spring'
+  gem 'guard-spring'
 end
 
 group :test do

@@ -23,3 +23,6 @@
 
 # Ignore spring - Rails application preloader
 /spring
+
+# Ignore bundler vendor director
+/vendor

@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 module Pipeline
   class Processor
-    include Sidekiq::Worker
+    include SuckerPunch::Job
 
     def perform
       # TODO

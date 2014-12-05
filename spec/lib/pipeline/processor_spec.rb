@@ -2,6 +2,6 @@
 require 'rails_helper'
 
 module Pipeline
-  RSpec.describe Uploader do
+  RSpec.describe Processor do
   end
 end

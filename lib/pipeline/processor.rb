@@ -1,10 +1,10 @@
 # -*- encoding : utf-8 -*-
 module Pipeline
-  class Processor
-    include SuckerPunch::Job
+  module Processor
 
-    def perform
-      # TODO
+    def process(original, changes)
+      changes.each_with_object(original) { |(action, args), image| image.send(action, *args) }
     end
+
   end
 end

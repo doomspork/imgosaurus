@@ -1,0 +1,4 @@
+development:
+  provider: 'Local'
+  local_root: './public/'
+  endpoint: 'http://localhost:3000/'

@@ -4,6 +4,7 @@ FactoryGirl.define do
     email 'user@example.com'
     password 'passwords are great'
     password_confirmation 'passwords are great'
+    token { SecureRandom.uuid }
   end
 
   factory :admin, class: User do

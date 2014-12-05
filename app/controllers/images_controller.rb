@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ImagesController < ApplicationController
-  before_action :validate_params
+  before_action :authorize!, :validate_params
 
   def create
     final_image = Pipeline.process(image, transforms)

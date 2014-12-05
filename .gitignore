@@ -30,3 +30,6 @@
 
 # Ignore bundler vendor director
 /vendor
+
+# OS X
+.DS_Store

@@ -18,8 +18,15 @@
 # Ingore code coverage report
 /docs/coverage
 
-# Ignore cloud9 ide files
+# Ignore Cloud9 IDE files
 .c9
+
+# Ingore IntelliJ IDE files
+.idea
+*.iml
 
 # Ignore spring - Rails application preloader
 /spring
+
+# Ignore bundler vendor director
+/vendor

@@ -8,9 +8,12 @@ RSpec.describe ImagesController, type: :controller do
 
     before { request.env['HTTP_IMGOSAURUS_TOKEN'] = user.token }
 
+    let(:original_image) { 'http://www.example.org/foo.jpg' }
+    let(:transformations) {  { 'crop' => '15%' } }
+
     it 'returns http success' do
-      mock(Pipeline).process(anything, anything) { final_image }
-      post :create, image: 'a remote path', transformations: { 'crop' => '15%' }
+      mock(Pipeline).process(original_image, transformations) { final_image }
+      post :create, image: original_image, transformations: transformations
       expect(response).to have_http_status(:success)
       expect(json_response).to include 'image' => final_image
     end
@@ -21,12 +24,12 @@ RSpec.describe ImagesController, type: :controller do
         expect(response).to have_http_status(:bad_request)
       end
     end
-    
+
     context 'when token is missing or invalid' do
       before { request.env['HTTP_IMGOSAURUS_TOKEN'] = nil }
-      
+
       it 'returns http unauthorized' do
-        post :create, image: 'a remote path', transformations: { 'crop' => '15%' }
+        post :create, image: original_image, transformations: transformations
         expect(response).to have_http_status(:unauthorized)
       end
     end
